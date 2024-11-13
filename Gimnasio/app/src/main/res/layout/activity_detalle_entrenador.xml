@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout">
+
+    <!-- Contenido principal de la actividad -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:title="Detalles del Entrenador"
+            app:titleTextColor="#FFFFFF" />
+
+        <!-- Contenido principal en LinearLayout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#f9f9f9"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Título -->
+
+            <!-- Nombre -->
+            <TextView
+                android:id="@+id/textNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre: "
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Nick -->
+            <TextView
+                android:id="@+id/textNick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nick: "
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Fecha de nacimiento -->
+            <TextView
+                android:id="@+id/textFechaNacimiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha de Nacimiento: "
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Fecha de alta -->
+            <TextView
+                android:id="@+id/textFechaAlta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha de alta: "
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Fecha de último login -->
+            <TextView
+                android:id="@+id/textFechaUltimoLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha de último login: "
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Entrenador Creador -->
+            <TextView
+                android:id="@+id/textEntrenadorCreador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entrenador Creador: "
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Spinner de Clientes -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clientes"
+                android:textSize="14sp"
+                android:textColor="#555"
+                android:layout_marginBottom="8dp" />
+            <Spinner
+                android:id="@+id/spinnerClientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Spinner de Entrenadores Creados -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entrenadores creados"
+                android:textSize="14sp"
+                android:textColor="#555"
+                android:layout_marginBottom="8dp" />
+            <Spinner
+                android:id="@+id/spinnerEntrenadoresCreados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Spinner de Salas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salas que gestiona"
+                android:textSize="14sp"
+                android:textColor="#555"
+                android:layout_marginBottom="8dp" />
+            <Spinner
+                android:id="@+id/spinnerSalas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Spinner de actividades a su cargo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actividades a su cargo"
+                android:textSize="14sp"
+                android:textColor="#555"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewActividades"
+                android:layout_width="match_parent"
+                android:layout_height="114dp" />
+
+            <!-- Botón para Confirmar -->
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
+                android:text="Volver"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Menú lateral -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_main"
+        android:background="#FFFFFF" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

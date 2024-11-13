@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:id="@+id/item_actividad">
+
+    <!-- Tipo de Actividad -->
+    <!--   <TextView
+           android:id="@+id/tipo_actividad"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Tipo: Yoga"
+           android:textSize="16sp"
+           android:paddingBottom="8dp"/>-->
+
+       <!-- Fecha de Inicio -->
+    <TextView
+        android:id="@+id/fecha_inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Inicio: 2024-11-13"
+        android:textSize="14sp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Fecha de Fin -->
+    <TextView
+        android:id="@+id/fecha_fin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Fin: 2024-11-20"
+        android:textSize="14sp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Descripción de la Actividad -->
+    <!--  <TextView
+         android:id="@+id/descripcion"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Descripción: Actividad para mejorar flexibilidad"
+         android:textSize="14sp"
+         android:paddingBottom="8dp"/>-->
+ </LinearLayout>
